@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Flow Chart Visualiser</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gojs/1.8.36/go-debug.js"></script>
+
+    <script src="diagram.js"></script>
+
+    <body onload="init()">
+      <div id="sample" class="container">
+        <div style="width: 100%; display: flex; justify-content: space-between">
+          <div
+            id="myPaletteDiv"
+            style="width: 100px; margin-right: 2px; background-color: whitesmoke; border: solid 1px black"
+          ></div>
+          <div
+            id="myDiagramDiv"
+            style="flex-grow: 1; height: 750px; border: solid 1px black"
+          ></div>
+        </div>
+        <div class="">
+          <h3 class="center-text">Diagram Model saved in JSON format:</h3>
+        </div>
+        <hr />
+        <div class="text-center" style="width:90%;; margin:0 auto">
+          <div class="text-center form-group">
+            <textarea
+              id="mySavedModel"
+              style="width:80%;height:300px;margin:0 auto;"
+              class="form-control"
+            >
+            </textarea>
+          </div>
+          <div class="form-group">
+            <button
+              id="SaveButton"
+              onclick="save()"
+              class="btn btn-info btn-block"
+            >
+              Save
+            </button>
+          </div>
+          <div class="form-group">
+            <button onclick="load()" class="btn btn-success btn-block">
+              Load
+            </button>
+          </div>
+
+          <button onclick="printDiagram()" class="btn btn-primary btn-block">
+            Print Diagram Using SVG
+          </button>
+        </div>
+      </div>
+      <script src="flow.js"></script>
+    </body>
+  </head>
+</html>
